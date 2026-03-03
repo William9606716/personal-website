@@ -23,7 +23,7 @@ export const experience: ExperienceItem[] = [
     role: "Machine Learning Engineer Intern",
     startDate: "Jun 2024",
     endDate: "Aug 2024",
-    location: "Remote",
+    location: "Shanghai, China",
     bullets: [
       "Optimized LSTM neural network for ECG signal classification, improving accuracy from 83% to 91%",
       "Designed end-to-end ECG signal processing pipeline using FFT for noise reduction and LSTM for arrhythmia detection, deployed to wearable medical devices",
