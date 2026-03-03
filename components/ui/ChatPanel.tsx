@@ -56,7 +56,7 @@ export default function ChatPanel() {
   }
 
   return (
-    <aside className="fixed right-0 top-14 w-96 h-[calc(100vh-3.5rem)] border-l border-[#e5e7eb] bg-[#fafafa] flex flex-col z-40">
+    <aside className="fixed right-0 top-14 w-[22rem] h-[calc(100vh-3.5rem)] border-l border-[#e5e7eb] bg-[#fafafa] flex flex-col z-40">
       {/* Header */}
       <div className="px-5 py-4 border-b border-[#e5e7eb] text-center">
         <p className="text-base font-semibold text-[#111827]">Chat with William</p>

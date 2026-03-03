@@ -67,7 +67,7 @@ export default function EducationItem({ item }: EducationItemProps) {
             item.school
           )}
         </span>
-        <span className="text-sm text-[#6b7280] ml-auto mr-4 whitespace-nowrap hidden sm:inline">
+        <span className="text-sm text-[#6b7280] ml-auto mr-4 whitespace-nowrap hidden lg:inline">
           {item.degree}
         </span>
         <span className="text-xs text-[#6b7280] mr-4 whitespace-nowrap hidden md:inline">

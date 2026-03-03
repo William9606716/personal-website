@@ -12,8 +12,8 @@ export default function Home() {
       <Navbar />
       <div className="flex">
         <Sidebar />
-        <main className="ml-96 flex-1 pr-96 min-h-screen">
-          <div className="max-w-4xl mx-auto px-10 pt-20 pb-12">
+        <main className="ml-80 flex-1 pr-[22rem] min-h-screen">
+          <div className="max-w-[57rem] mx-auto px-10 pt-20 pb-12">
             <Hero />
             <Education />
             <Experience />
