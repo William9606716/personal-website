@@ -8,6 +8,7 @@ export default function ChatPanel() {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -55,11 +56,20 @@ export default function ChatPanel() {
     }
   }
 
-  return (
-    <aside className="fixed right-0 top-14 w-[22rem] h-[calc(100vh-3.5rem)] border-l border-[#e5e7eb] bg-[#fafafa] flex flex-col z-40">
+  const chatUI = (
+    <>
       {/* Header */}
-      <div className="px-5 py-4 border-b border-[#e5e7eb] text-center">
+      <div className="px-5 py-4 border-b border-[#e5e7eb] text-center relative">
         <p className="text-base font-semibold text-[#111827]">Chat with William</p>
+        <button
+          onClick={() => setMobileOpen(false)}
+          className="absolute right-4 top-1/2 -translate-y-1/2 lg:hidden text-[#6b7280] hover:text-[#111827] transition-colors"
+          aria-label="Close chat"
+        >
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+          </svg>
+        </button>
       </div>
 
       {/* Messages */}
@@ -132,6 +142,33 @@ export default function ChatPanel() {
           Send
         </button>
       </div>
-    </aside>
+    </>
+  );
+
+  return (
+    <>
+      {/* Desktop sidebar */}
+      <aside className="fixed right-0 top-14 w-[22rem] h-[calc(100vh-3.5rem)] border-l border-[#e5e7eb] bg-[#fafafa] hidden lg:flex flex-col z-40">
+        {chatUI}
+      </aside>
+
+      {/* Mobile FAB */}
+      <button
+        onClick={() => setMobileOpen(true)}
+        className="fixed bottom-6 right-6 z-50 lg:hidden w-14 h-14 rounded-full bg-[#2563eb] text-white shadow-lg flex items-center justify-center hover:bg-[#1d4ed8] transition-colors"
+        aria-label="Open chat"
+      >
+        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
+        </svg>
+      </button>
+
+      {/* Mobile full-screen overlay */}
+      {mobileOpen && (
+        <div className="fixed inset-0 z-50 flex flex-col bg-[#fafafa] lg:hidden">
+          {chatUI}
+        </div>
+      )}
+    </>
   );
 }

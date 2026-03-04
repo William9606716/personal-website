@@ -24,7 +24,7 @@ export default function Sidebar() {
   }, []);
 
   return (
-    <aside className="fixed top-14 left-0 h-[calc(100vh-3.5rem)] w-80 flex flex-col px-6 py-8 border-r border-[#e5e7eb] bg-[#fafafa] overflow-y-auto">
+    <aside className="fixed top-14 left-0 h-[calc(100vh-3.5rem)] w-80 hidden lg:flex flex-col px-6 py-8 border-r border-[#e5e7eb] bg-[#fafafa] overflow-y-auto">
       <img
         src="/avatar.jpg"
         alt="William Peng"

@@ -10,7 +10,7 @@ export default function SectionWrapper({
   className = "",
 }: SectionWrapperProps) {
   return (
-    <section id={id} className={`py-16 scroll-mt-14 ${className}`}>
+    <section id={id} className={`py-10 scroll-mt-14 ${className}`}>
       {children}
     </section>
   );

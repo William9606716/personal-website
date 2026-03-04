@@ -4,7 +4,7 @@ import { education } from "@/data/education";
 
 export default function Education() {
   return (
-    <SectionWrapper id="education" className="border-t border-[#e5e7eb]">
+    <SectionWrapper id="education">
       <h2 className="text-2xl font-bold text-[#000000] mb-6">Education</h2>
       <div>
         {education.map((item) => (
